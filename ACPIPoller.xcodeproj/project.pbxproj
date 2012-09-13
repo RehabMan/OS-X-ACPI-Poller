@@ -1,0 +1,311 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C4B238814598AD20080D960 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C4B238614598AD20080D960 /* InfoPlist.strings */; };
+		849921901600F4FC00CCDF3B /* ACPIPoller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8499218E1600F4FC00CCDF3B /* ACPIPoller.cpp */; };
+		849921911600F4FC00CCDF3B /* ACPIPoller.h in Headers */ = {isa = PBXBuildFile; fileRef = 8499218F1600F4FC00CCDF3B /* ACPIPoller.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0C4B237E14598AD20080D960 /* ACPIPoller.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ACPIPoller.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C4B238214598AD20080D960 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = System/Library/Frameworks/Kernel.framework; sourceTree = SDKROOT; };
+		0C4B238514598AD20080D960 /* ACPIPoller-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ACPIPoller-Info.plist"; sourceTree = "<group>"; };
+		0C4B238714598AD20080D960 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0C4B238D14598AD20080D960 /* ACPIPoller-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ACPIPoller-Prefix.pch"; sourceTree = "<group>"; };
+		8499218E1600F4FC00CCDF3B /* ACPIPoller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ACPIPoller.cpp; sourceTree = "<group>"; };
+		8499218F1600F4FC00CCDF3B /* ACPIPoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPIPoller.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0C4B237914598AD20080D960 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0C4B237114598AD10080D960 = {
+			isa = PBXGroup;
+			children = (
+				0C4B238314598AD20080D960 /* ACPIPoller */,
+				0C4B238014598AD20080D960 /* Frameworks */,
+				0C4B237F14598AD20080D960 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0C4B237F14598AD20080D960 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C4B237E14598AD20080D960 /* ACPIPoller.kext */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0C4B238014598AD20080D960 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C4B238114598AD20080D960 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0C4B238114598AD20080D960 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C4B238214598AD20080D960 /* Kernel.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		0C4B238314598AD20080D960 /* ACPIPoller */ = {
+			isa = PBXGroup;
+			children = (
+				8499218E1600F4FC00CCDF3B /* ACPIPoller.cpp */,
+				8499218F1600F4FC00CCDF3B /* ACPIPoller.h */,
+				0C4B238414598AD20080D960 /* Supporting Files */,
+			);
+			path = ACPIPoller;
+			sourceTree = "<group>";
+		};
+		0C4B238414598AD20080D960 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C4B238514598AD20080D960 /* ACPIPoller-Info.plist */,
+				0C4B238614598AD20080D960 /* InfoPlist.strings */,
+				0C4B238D14598AD20080D960 /* ACPIPoller-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0C4B237A14598AD20080D960 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				849921911600F4FC00CCDF3B /* ACPIPoller.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0C4B237D14598AD20080D960 /* ACPIPoller */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C4B239014598AD20080D960 /* Build configuration list for PBXNativeTarget "ACPIPoller" */;
+			buildPhases = (
+				0C4B237814598AD20080D960 /* Sources */,
+				0C4B237914598AD20080D960 /* Frameworks */,
+				0C4B237A14598AD20080D960 /* Headers */,
+				0C4B237B14598AD20080D960 /* Resources */,
+				0C4B237C14598AD20080D960 /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ACPIPoller;
+			productName = ACPIPoller;
+			productReference = 0C4B237E14598AD20080D960 /* ACPIPoller.kext */;
+			productType = "com.apple.product-type.kernel-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0C4B237314598AD10080D960 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+			};
+			buildConfigurationList = 0C4B237614598AD10080D960 /* Build configuration list for PBXProject "ACPIPoller" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0C4B237114598AD10080D960;
+			productRefGroup = 0C4B237F14598AD20080D960 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0C4B237D14598AD20080D960 /* ACPIPoller */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0C4B237B14598AD20080D960 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C4B238814598AD20080D960 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		0C4B237C14598AD20080D960 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0C4B237814598AD20080D960 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				849921901600F4FC00CCDF3B /* ACPIPoller.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0C4B238614598AD20080D960 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C4B238714598AD20080D960 /* en */,
+			);
+			name = InfoPlist.strings;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0C4B238E14598AD20080D960 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		0C4B238F14598AD20080D960 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		0C4B239114598AD20080D960 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0.0d1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ACPIPoller/ACPIPoller-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG_MSG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = (
+					"DEBUG_MSG=1",
+					"DEBUG=1",
+				);
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "ACPIPoller/ACPIPoller-Info.plist";
+				MODULE_NAME = com.rehabman.driver.ACPIPoller;
+				MODULE_VERSION = 1.0.0d1;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYMROOT = Build;
+				"VALID_ARCHS[sdk=*]" = "i386 x86_64";
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Debug;
+		};
+		0C4B239214598AD20080D960 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0.0d1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ACPIPoller/ACPIPoller-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "ACPIPoller/ACPIPoller-Info.plist";
+				MODULE_NAME = com.rehabman.driver.ACPIPoller;
+				MODULE_VERSION = 1.0.0d1;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYMROOT = Build;
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0C4B237614598AD10080D960 /* Build configuration list for PBXProject "ACPIPoller" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C4B238E14598AD20080D960 /* Debug */,
+				0C4B238F14598AD20080D960 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C4B239014598AD20080D960 /* Build configuration list for PBXNativeTarget "ACPIPoller" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C4B239114598AD20080D960 /* Debug */,
+				0C4B239214598AD20080D960 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0C4B237314598AD10080D960 /* Project object */;
+}
