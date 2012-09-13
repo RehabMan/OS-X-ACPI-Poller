@@ -1,0 +1,11 @@
+Written by RehabMan 2012-09-12
+
+Advanced Configuration and Power Interface (ACPI) based polling kernel extension.  The purpose here is very simple.  Poll any number of ACPI methods once per second.
+
+The methods to poll are determined by the Methods <key> in Info.plist.  This is simply an array of method names.  These methods must be coded within the device specified by IONameMatch.  Each method is called once per-second with no parameters.
+
+This kext was developed to better control the system fan on HP 4x30s ProBook laptops.  The included Info.plist is designed for the DSDT patches also this github account.  It could probably be used in other similar situations.
+
+It would make sense to include this as a feature for a future version of ACPISensors.kext, but I tried to build and use the latest version and could not get it along with the new versions of HWMonitor, FakeSMC, and CPUMonitor to work properly.  I was probably doing something wrong.  So, for now we stay with slice's version and add an extra extension for this purpose.
+
+TODO: Update this README to point to new fan control thread on tonymacx86.com.
