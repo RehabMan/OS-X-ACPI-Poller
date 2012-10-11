@@ -75,15 +75,18 @@ bool ACPIPoller::start(IOService *provider)
     m_pWorkLoop = getWorkLoop();
     if (NULL == m_pWorkLoop)
         return false;
+    m_pWorkLoop->retain();
 
     // "Methods" property in plist tells us what ACPI methods to call
     m_pMethods = OSDynamicCast(OSArray, getProperty("Methods"));
     if (NULL == m_pMethods)
         return false;
+    m_pMethods->retain();
     DEBUG_LOG("ACPIPoller::start: found %d methods to call\n", m_pMethods->getCount());
 
     // need a timer to kick off every second
-    m_pTimer = IOTimerEventSource::timerEventSource(this, OSMemberFunctionCast(IOTimerEventSource::Action, this, &ACPIPoller::OnTimerEvent));
+    m_pTimer = IOTimerEventSource::timerEventSource(this,
+        OSMemberFunctionCast(IOTimerEventSource::Action, this, &ACPIPoller::OnTimerEvent));
     if (NULL == m_pTimer)
         return false;
 	if (kIOReturnSuccess != m_pWorkLoop->addEventSource(m_pTimer))
@@ -145,6 +148,16 @@ void ACPIPoller::stop(IOService *provider)
         m_pWorkLoop->removeEventSource(m_pTimer);
         m_pTimer->release();
         m_pTimer = NULL;
+    }
+    if (NULL != m_pWorkLoop)
+    {
+        m_pWorkLoop->release();
+        m_pWorkLoop = NULL;
+    }
+    if (NULL != m_pMethods)
+    {
+        m_pMethods->release();
+        m_pMethods = NULL;
     }
 	
     super::stop(provider);
