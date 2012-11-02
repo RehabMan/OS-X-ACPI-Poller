@@ -56,7 +56,36 @@ void ACPIPoller::free(void)
 IOService *ACPIPoller::probe(IOService *provider, SInt32 *score)
 {
     DEBUG_LOG("ACPIPoller::probe: Probing\n");
+    
     IOService *result = super::probe(provider, score);
+    IOACPIPlatformDevice* pDevice = OSDynamicCast(IOACPIPlatformDevice, provider);
+    
+    // "Methods" property in plist tells us what ACPI methods to call
+    OSArray* pMethods = OSDynamicCast(OSArray, getProperty("Methods"));
+    if (NULL == pMethods)
+        return false;
+    
+    // check to be sure there will be work to do in timer, because otherwise
+    // there is no reason to be here.
+    int count = pMethods->getCount();
+    int i = 0;
+    for (/*nothing*/; i < count; i++)
+    {
+        OSString* method = OSDynamicCast(OSString, pMethods->getObject(i));
+        if (NULL != method)
+        {
+            if (kIOReturnSuccess == pDevice->validateObject(method->getCStringNoCopy()))
+                break;
+            DEBUG_LOG("ACPIPoller::probe: unable to validate method '%s'\n", method->getCStringNoCopy());
+        }
+    }
+    // if no methods validated, then fail the start (nothing to do)
+    if (i >= count)
+    {
+        DEBUG_LOG("ACPIPoller::probe: unable to validate any methods\n");
+        return NULL;
+    }
+    
     return result;
 }
 
@@ -68,21 +97,27 @@ bool ACPIPoller::start(IOService *provider)
     DEBUG_LOG("ACPIPoller::start: called\n");
     
     m_pDevice = OSDynamicCast(IOACPIPlatformDevice, provider);
-
     if (NULL == m_pDevice || !super::start(provider))
         return false;
 
+    // "Methods" property in plist tells us what ACPI methods to call
+    OSArray* pMethods = OSDynamicCast(OSArray, getProperty("Methods"));
+    if (NULL == pMethods)
+        return false;
+    DEBUG_LOG("ACPIPoller::start: found %d methods to call\n", pMethods->getCount());
+    
+    // need a work loop to send timer events to
     m_pWorkLoop = getWorkLoop();
     if (NULL == m_pWorkLoop)
+    {
+        m_pMethods = NULL;
         return false;
+    }
     m_pWorkLoop->retain();
 
-    // "Methods" property in plist tells us what ACPI methods to call
-    m_pMethods = OSDynamicCast(OSArray, getProperty("Methods"));
-    if (NULL == m_pMethods)
-        return false;
+    // need to hold a copy of the methods array for use in OnTimerEvent
+    m_pMethods = pMethods;
     m_pMethods->retain();
-    DEBUG_LOG("ACPIPoller::start: found %d methods to call\n", m_pMethods->getCount());
 
     // need a timer to kick off every second
     m_pTimer = IOTimerEventSource::timerEventSource(this,
@@ -92,7 +127,7 @@ bool ACPIPoller::start(IOService *provider)
 	if (kIOReturnSuccess != m_pWorkLoop->addEventSource(m_pTimer))
         return false;
     
-	IOLog("ACPIPoller: Version 2012.0912 starting\n");
+	IOLog("ACPIPoller: Version 2012.1102 starting\n");
     
     // call it once
     OnTimerEvent();
