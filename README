@@ -8,4 +8,6 @@ This kext was developed to better control the system fan on HP 4x30s ProBook lap
 
 It would make sense to include this as a feature for a future version of ACPISensors.kext, but I tried to build and use the latest version and could not get it along with the new versions of HWMonitor, FakeSMC, and CPUMonitor to work properly.  I was probably doing something wrong.  So, for now we stay with slice's version and add an extra extension for this purpose.
 
-TODO: Update this README to point to new fan control thread on tonymacx86.com.
+See this thread for more information: http://www.tonymacx86.com/hp-probook/72043-new-fan-control-dsdt-silent-fan-higher-temps.html
+
+Download link: https://github.com/RehabMan/OS-X-ACPI-Poller/downloads
