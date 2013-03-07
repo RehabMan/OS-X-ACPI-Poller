@@ -18,6 +18,7 @@
 		0C4B238514598AD20080D960 /* ACPIPoller-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ACPIPoller-Info.plist"; sourceTree = "<group>"; };
 		0C4B238714598AD20080D960 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0C4B238D14598AD20080D960 /* ACPIPoller-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ACPIPoller-Prefix.pch"; sourceTree = "<group>"; };
+		844778DD16E7FD2100B27895 /* makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = SOURCE_ROOT; usesTabs = 1; };
 		8499218E1600F4FC00CCDF3B /* ACPIPoller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ACPIPoller.cpp; sourceTree = "<group>"; };
 		8499218F1600F4FC00CCDF3B /* ACPIPoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPIPoller.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +70,7 @@
 		0C4B238314598AD20080D960 /* ACPIPoller */ = {
 			isa = PBXGroup;
 			children = (
+				844778DD16E7FD2100B27895 /* makefile */,
 				8499218E1600F4FC00CCDF3B /* ACPIPoller.cpp */,
 				8499218F1600F4FC00CCDF3B /* ACPIPoller.h */,
 				0C4B238414598AD20080D960 /* Supporting Files */,
