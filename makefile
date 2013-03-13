@@ -38,3 +38,5 @@ distribute:
 	chmod +x /tmp/org.voodoo.rm.dsym.sh
 	/tmp/org.voodoo.rm.dsym.sh
 	rm /tmp/org.voodoo.rm.dsym.sh
+	ditto -c -k --sequesterRsrc --zlibCompressionLevel 9 ./Distribute ./Archive.zip
+	mv ./Archive.zip ./Distribute/`date +RehabMan-Poller-%Y-%m%d.zip`
