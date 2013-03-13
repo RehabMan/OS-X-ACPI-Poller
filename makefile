@@ -1,16 +1,25 @@
 # really just some handy scripts...
 
 KEXT=ACPIPoller.kext
+DIST=RehabMan-Poller
+
+ifeq ($(findstring 32,$(BITS)),32)
+OPTIONS:=$(OPTIONS) -arch i386
+endif
+
+ifeq ($(findstring 64,$(BITS)),64)
+OPTIONS:=$(OPTIONS) -arch x86_64
+endif
 
 .PHONY: all
 all:
-	xcodebuild $(OPTIONS) -configuration Debug
-	xcodebuild $(OPTIONS) -configuration Release
+	xcodebuild build $(OPTIONS) -configuration Debug
+	xcodebuild build $(OPTIONS) -configuration Release
 
 .PHONY: clean
 clean:
-	xcodebuild -configuration Debug clean
-	xcodebuild -configuration Release clean
+	xcodebuild clean $(OPTIONS) -configuration Debug
+	xcodebuild clean $(OPTIONS) -configuration Release
 
 .PHONY: update_kernelcache
 update_kernelcache:
@@ -39,4 +48,4 @@ distribute:
 	/tmp/org.voodoo.rm.dsym.sh
 	rm /tmp/org.voodoo.rm.dsym.sh
 	ditto -c -k --sequesterRsrc --zlibCompressionLevel 9 ./Distribute ./Archive.zip
-	mv ./Archive.zip ./Distribute/`date +RehabMan-Poller-%Y-%m%d.zip`
+	mv ./Archive.zip ./Distribute/`date +$(DIST)-%Y-%m%d.zip`
