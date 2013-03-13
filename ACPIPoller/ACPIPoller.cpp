@@ -22,7 +22,6 @@
 #include <IOKit/IOCommandGate.h>
 #include "ACPIPoller.h"
 
-#define super IOService
 OSDefineMetaClassAndStructors(ACPIPoller, IOService)
 
 /******************************************************************************
@@ -39,15 +38,6 @@ bool ACPIPoller::init(OSDictionary *dict)
     m_fInTimer = false;
     m_pMethods = NULL;
     return result;
-}
-
-/******************************************************************************
- * ACPIPoller::free
- ******************************************************************************/
-void ACPIPoller::free(void)
-{
-    DEBUG_LOG("ACPIPoller::free: Freeing\n");
-    super::free();
 }
 
 /******************************************************************************

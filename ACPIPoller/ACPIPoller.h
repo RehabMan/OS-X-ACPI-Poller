@@ -36,11 +36,11 @@
 
 class ACPIPoller : public IOService
 {
+    typedef IOService super;
 	OSDeclareDefaultStructors(ACPIPoller)
 
 public:
 	virtual bool init(OSDictionary *dictionary = 0);
-    virtual void free(void);
     virtual IOService *probe(IOService *provider, SInt32 *score);
     bool start(IOService *provider);
 	void stop(IOService *provider);
