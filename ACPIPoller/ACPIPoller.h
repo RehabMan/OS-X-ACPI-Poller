@@ -26,6 +26,10 @@
 #include <IOKit/acpi/IOACPIPlatformDevice.h>
 #include <IOKit/IOTimerEventSource.h>
 
+#ifndef EXPORT
+#define EXPORT __attribute__((visibility("default")))
+#endif
+
 #ifdef DEBUG_MSG
 #define DEBUG_LOG(args...)  IOLog(args)
 #else
@@ -34,7 +38,7 @@
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-class ACPIPoller : public IOService
+class EXPORT ACPIPoller : public IOService
 {
     typedef IOService super;
 	OSDeclareDefaultStructors(ACPIPoller)
@@ -42,8 +46,8 @@ class ACPIPoller : public IOService
 public:
 	virtual bool init(OSDictionary *dictionary = 0);
     virtual IOService *probe(IOService *provider, SInt32 *score);
-    bool start(IOService *provider);
-	void stop(IOService *provider);
+    virtual bool start(IOService *provider);
+	virtual void stop(IOService *provider);
 
 private:
 	IOACPIPlatformDevice*   m_pDevice;

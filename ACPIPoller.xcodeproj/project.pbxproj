@@ -71,8 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				844778DD16E7FD2100B27895 /* makefile */,
-				8499218E1600F4FC00CCDF3B /* ACPIPoller.cpp */,
 				8499218F1600F4FC00CCDF3B /* ACPIPoller.h */,
+				8499218E1600F4FC00CCDF3B /* ACPIPoller.cpp */,
 				0C4B238414598AD20080D960 /* Supporting Files */,
 			);
 			path = ACPIPoller;
@@ -196,29 +196,25 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEPLOYMENT_POSTPROCESSING = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				"GCC_OPTIMIZATION_LEVEL[arch=i386]" = s;
-				"GCC_OPTIMIZATION_LEVEL[arch=x86_64]" = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"DEBUG_MSG=1",
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
-				GCC_THREADSAFE_STATICS = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				LLVM_LTO = YES;
-				"LLVM_LTO[arch=i386]" = NO;
+				LLVM_LTO = NO;
 				"LLVM_LTO[arch=x86_64]" = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CFLAGS = "-fno-stack-protector";
-				SDKROOT = macosx10.7;
+				"OTHER_LDFLAGS[arch=x86_64]" = "-dead_strip";
+				SDKROOT = macosx10.8;
 				STRIP_STYLE = "non-global";
 			};
 			name = Debug;
@@ -228,20 +224,20 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEPLOYMENT_POSTPROCESSING = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
-				GCC_THREADSAFE_STATICS = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				LLVM_LTO = YES;
-				"LLVM_LTO[arch=i386]" = NO;
+				LLVM_LTO = NO;
 				"LLVM_LTO[arch=x86_64]" = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CFLAGS = "-fno-stack-protector";
-				SDKROOT = macosx10.7;
+				"OTHER_LDFLAGS[arch=x86_64]" = "-dead_strip";
+				SDKROOT = macosx10.8;
 				STRIP_STYLE = "non-global";
 			};
 			name = Release;
