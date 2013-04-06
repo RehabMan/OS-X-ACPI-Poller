@@ -117,7 +117,7 @@ bool ACPIPoller::start(IOService *provider)
 	if (kIOReturnSuccess != m_pWorkLoop->addEventSource(m_pTimer))
         return false;
     
-	IOLog("ACPIPoller: Version 2012.1102 starting\n");
+	IOLog("ACPIPoller: Version 0.7.1 starting\n");
     
     // call it once
     OnTimerEvent();
