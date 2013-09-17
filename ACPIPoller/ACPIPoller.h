@@ -22,6 +22,8 @@
 #ifndef __ACPIPoller__
 #define __ACPIPoller__
 
+#define ACPIPoller org_rehabman_ACPIPoller
+
 #include <IOKit/IOService.h>
 #include <IOKit/acpi/IOACPIPlatformDevice.h>
 #include <IOKit/IOTimerEventSource.h>
@@ -41,7 +43,7 @@
 class EXPORT ACPIPoller : public IOService
 {
     typedef IOService super;
-	OSDeclareDefaultStructors(ACPIPoller)
+	OSDeclareDefaultStructors(org_rehabman_ACPIPoller)
 
 public:
 	virtual bool init(OSDictionary *dictionary = 0);

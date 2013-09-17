@@ -22,7 +22,7 @@
 #include <IOKit/IOCommandGate.h>
 #include "ACPIPoller.h"
 
-OSDefineMetaClassAndStructors(ACPIPoller, IOService)
+OSDefineMetaClassAndStructors(org_rehabman_ACPIPoller, IOService)
 
 /******************************************************************************
  * ACPIPoller::init
@@ -117,7 +117,7 @@ bool ACPIPoller::start(IOService *provider)
 	if (kIOReturnSuccess != m_pWorkLoop->addEventSource(m_pTimer))
         return false;
     
-	IOLog("ACPIPoller: Version 0.7.1 starting\n");
+	IOLog("ACPIPoller: Version 0.8.0 starting\n");
     
     // call it once
     OnTimerEvent();

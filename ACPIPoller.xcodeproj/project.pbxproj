@@ -17,10 +17,10 @@
 		0C4B238214598AD20080D960 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = System/Library/Frameworks/Kernel.framework; sourceTree = SDKROOT; };
 		0C4B238514598AD20080D960 /* ACPIPoller-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ACPIPoller-Info.plist"; sourceTree = "<group>"; };
 		0C4B238714598AD20080D960 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0C4B238D14598AD20080D960 /* ACPIPoller-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ACPIPoller-Prefix.pch"; sourceTree = "<group>"; };
-		844778DD16E7FD2100B27895 /* makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = SOURCE_ROOT; usesTabs = 1; };
-		8499218E1600F4FC00CCDF3B /* ACPIPoller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ACPIPoller.cpp; sourceTree = "<group>"; };
-		8499218F1600F4FC00CCDF3B /* ACPIPoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPIPoller.h; sourceTree = "<group>"; };
+		0C4B238D14598AD20080D960 /* ACPIPoller-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "ACPIPoller-Prefix.pch"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		844778DD16E7FD2100B27895 /* makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; lineEnding = 0; path = makefile; sourceTree = SOURCE_ROOT; usesTabs = 1; };
+		8499218E1600F4FC00CCDF3B /* ACPIPoller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = ACPIPoller.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		8499218F1600F4FC00CCDF3B /* ACPIPoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ACPIPoller.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
